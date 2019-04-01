@@ -1,0 +1,26 @@
+﻿@model WebApplication4.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Login)
+    <br />
+    @Html.EditorFor(model => model.Login)
+    <br /><br />
+    @Html.ValidationMessageFor(model => model.Login)
+    <br />
+    @Html.LabelFor(model => model.Password)
+    <br />
+    @Html.EditorFor(model => model.Password)
+    <br />
+    @Html.ValidationMessageFor(model => model.Password)
+    <br />
+    <input type="submit" value="Войти" />
+}
+<a asp-action="Registration" asp-controller="Auth">
+    <button type="button" class="btn btn-secondary">Регистрация</button>
+</a>
+

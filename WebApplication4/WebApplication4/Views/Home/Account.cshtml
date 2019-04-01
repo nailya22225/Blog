@@ -1,0 +1,20 @@
+﻿@model WebApplication4.Models.User
+@{
+    ViewData["Title"] = "Account";
+}
+
+<h2>Account</h2>
+@Html.DisplayForModel()
+<div>
+    <a asp-action="CreateBlog" asp-controller="Home">Create</a>
+</div>
+<div>
+    <a asp-action="DisplayBlog">DisplayBlogs</a>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">Main</a>
+</div>
+
+
+

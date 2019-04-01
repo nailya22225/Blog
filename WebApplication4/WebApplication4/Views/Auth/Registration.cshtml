@@ -1,0 +1,39 @@
+﻿@model WebApplication4.Models.User
+@{
+    ViewData["Title"] = "Registration";
+}
+
+<h2>Registration</h2>
+<h2>Login</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Имя")
+    <br />
+    @Html.EditorFor(model => model.Name)
+    <br /><br />
+    @Html.LabelFor(model => model.LastName, "Фамилия")
+    <br />
+    @Html.EditorFor(model => model.LastName)
+    <br /><br />
+    @Html.LabelFor(model => model.City, "Город")
+    <br />
+    @Html.EditorFor(model => model.City)
+    <br /><br />
+    @Html.LabelFor(model => model.Years, "Года")
+    <br />
+    @Html.EditorFor(model => model.Years)
+    <br /><br />
+    @Html.ValidationMessageFor(model => model.Login)
+    <br />
+    @Html.LabelFor(model => model.Login, "Логин")
+    <br />
+    @Html.EditorFor(model => model.Login)
+    <br /><br />
+    @Html.ValidationMessageFor(model => model.Password)
+    <br />
+    @Html.LabelFor(model => model.Password, "Пароль")
+    <br />
+    @Html.EditorFor(model => model.Password)
+    <br /><br />
+    <input type="submit" value="Добавить" />
+}

@@ -1,0 +1,43 @@
+﻿@model WebApplication4.Models.Blog
+
+@{
+    ViewData["Title"] = "EditBlog";
+}
+
+<h2>EditBlog</h2>
+
+<h4>Blog</h4>
+<hr />
+@using (Html.BeginForm("EditBlog", "Home", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-4">
+        <fieldset>
+            @Html.HiddenFor(m => m.Id)
+            <p>
+                @Html.LabelFor(m => m.Headline, "Headline")
+                <br />
+                @Html.EditorFor(m => m.Headline)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Text, "Text")
+                <br />
+                @Html.EditorFor(m => m.Text)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.IsOpen, "IsOpen")
+                <br />
+                @Html.EditorFor(m => m.IsOpen)
+            </p>
+            @Html.HiddenFor(m => m.UserId)
+        </fieldset>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

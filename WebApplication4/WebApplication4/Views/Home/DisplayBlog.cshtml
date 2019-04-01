@@ -1,0 +1,41 @@
+﻿@model IEnumerable< WebApplication4.Models.Blog>
+
+@{
+    ViewData["Title"] = "DisplayBlog";
+}
+
+<h2>DisplayBlog</h2>
+
+<div>
+    <h4>Blog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var blog in Model)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => blog.Text)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => blog.Text)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => blog.Headline)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => blog.Headline)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => blog.IsOpen)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => blog.IsOpen)
+            </dd>
+            <div>
+                @Html.ActionLink("Edit", "EditBlog", new { /* id = Model.PrimaryKey */ })
+            </div>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Home">Back to List</a>
+</div>
